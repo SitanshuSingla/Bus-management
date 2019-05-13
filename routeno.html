@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>TODO supply a title</title>
+        <style>
+            body
+            {
+                margin:0;
+            }
+            .im{
+                float:left;
+            }
+            a{
+                text-decoration: none;
+                
+            }
+            a:visited
+            {
+                color:white;
+            }
+            a:link{
+                color:white;
+            }
+            .main
+            {
+                margin:0;
+                position:sticky;
+                clear:both;
+               
+            }
+            .a{
+                background-color:#282828;
+width:25%;
+color:white;
+border:none;
+cursor:pointer;
+float:left;
+padding:12px 24px;
+            }
+            .a:hover
+            {
+                        background-color:black;
+ width:25%;
+color:white;
+border:none;
+cursor:pointer;
+float:left;
+padding:12px 24px;
+            }
+            .di1{
+              float:left;
+               margin-left:100px;
+              
+            }
+             .di2{
+              float:left;
+             
+                margin-left:100px;
+             }
+            
+             .di3{
+               
+              float:left;
+               margin-left:100px;
+              
+            }
+             .di4{
+              float:left;
+               margin-left:200px;
+             
+              
+            }
+            .d
+            {
+                color:red;
+             text-align: center;
+             font-size: 25px;
+            }
+            
+            .a:hover{
+transition-duration:1s;
+transform:translate(0px,-5px);
+box-shadow:0px 7px 1px white;}
+            
+            .e{
+               
+             text-align: center;
+             font-size: 22px;
+            }
+            table,th,td{
+             
+                    border:1px solid black;
+                    border-collapse: collapse;
+            }
+            table
+            {
+                margin:auto;
+                width:1000;
+            }
+            th{
+                height:30px;
+                width:150px;
+                background-color: black;
+                color:white;
+                border:1px solid white;
+            }
+              .log{
+                float: right;
+                font-size:20px;
+            }
+            .f input[type="text"]
+            {
+                font-size: 15px;
+                border-radius: 5px;
+                width:200px;
+                height:30px;
+                border:2px solid black;
+               
+            }
+            tr:nth-child(odd) {background-color:#ffbf80;}
+            </style>
+           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+           
+          
+            </head>
+    <body ng-app="myModule">
+      
+        <img src="bus-manager-logo.png"  class="im" usemap="#a">
+        <map name="a">
+            <area shape="rect" coords="0,0,300,112" href="student.html" >
+        </map>
+        
+      <br><br> <div class="di4"> For more information<br>
+give a miss call on<br>
+1800 267 1999</div>
+<div class="di1">Transport<br>
++91 9501105714 <br>
++91 9501105715</div>
+<div class="di2">Delhi & NCR<br>
+please call on<br>
+9599368734</div>
+<div class="di3">WB / North East<br>
+Helpline<br>
+9810355724</div>
+        
+         <br><br><br><span class="log"><a href="login.html" style="color:red">Logout</a></span> 
+        <br>
+       
+       <div class="main">
+           <button class="a"><a href="About us.html">About Us</a></button>
+            <button class="a"><a href="Programs.html">Programs</a></button>
+             <button class="a"><a href="chalkpad.html">Chalkpad</a></button>
+              <button class="a"><a href="feedback.html">Feedback</a></button>
+           
+        </div><br>
+      <center>  <img src="school-transport-tystem-banner.jpg" class="mySlides" height="380" width="1100">
+         <img src="SchoolBus-NashvilleTransportation.jpg" class="mySlides" height="380" width="1100"></center><br><br>
+         
+       <div class="d"> <b> Transport Helpline - 8146651560, 8146651659</b></div><br>
+         
+       <div class="e"><b>UNIVERSITY- ROUTE 2018-19</b><div><br><br>
+                 
+           <div    ng-controller="myController">   <div class="f"> 
+                    <form action="login">  Search:<input type="text" placeholder="Route No" ng-model="searchText.routeno" name="user" />
+                    </form>
+               </div>
+               <table >
+                    <thead>
+                 <tr>    <th>S.no</th>
+                     <th>Route No.</th>
+                     <th>Route</th>
+                     <th>Bus NO.</th>
+                     <th>Driver Name</th>
+                    <th>Contact No.</th>
+                    <th>Timing</th>
+                 </thead>
+                 </tr>
+                    
+                     
+                    <tbody>
+                <tr ng-repeat="employee in employees | filter:searchText">
+                    <td> {{ employee.sno }}</td>
+                    <td> {{ employee.routeno }} </td>
+                    <td> {{ employee.route  }} </td>
+                     <td> {{ employee.bus  }} </td>
+                    <td> {{ employee.driver  }} </td>
+                   
+                    <td> {{ employee.contact }} </td>
+                    <td> {{ employee.timing  }} </td>
+                    
+                </tr>
+                
+                    </tbody>
+                 </table>
+        </div>
+        
+        
+   <script src="Script.js"></script>
+            
+             <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3500); // Change image every 2 seconds
+        }
+    </script>
+       
+    </body>
+</html>
